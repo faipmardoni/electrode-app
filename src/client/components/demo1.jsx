@@ -16,7 +16,7 @@ class Demo1 extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { textarea } = this.props;
-    axios.post("http://127.0.0.1:3001/", {
+    axios.post("https://serene-headland-42206.herokuapp.com/", {
       url_posting: textarea
     }).then(({ data }) => {
       console.log(data.result); // eslint-disable-line
