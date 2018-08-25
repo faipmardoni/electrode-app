@@ -1,12 +1,12 @@
 {
   "name": "projects",
   "version": "0.0.1",
-  "description": "",
-  "homepage": "",
+  "description": "testing build electrode app",
+  "homepage": "electrode-app",
   "author": {
     "name": "Faip Mardoni",
     "email": "faipmardoni@gmail.com",
-    "url": ""
+    "url": "your-app-url"
   },
   "contributors": [],
   "files": [
@@ -23,8 +23,8 @@
   },
   "license": "Apache-2.0",
   "engines": {
-    "node": ">= 8",
-    "npm": ">= 5"
+    "node": "^8.x.x",
+    "npm": "^6.x.x"
   },
   "scripts": {
     "build": "clap build",
