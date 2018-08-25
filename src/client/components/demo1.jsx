@@ -5,20 +5,29 @@ import { Nav } from "./nav";
 import { inputName, inputTextarea, selectOption } from "../actions";
 import custom from "../styles/custom.css"; // eslint-disable-line no-unused-vars
 import demoStyle from "../styles/demo1.css"; // eslint-disable-line no-unused-vars
+import axios from "axios"; // eslint-disable-line no-unused-vars
 
 class Demo1 extends Component {
   constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-    this.state = {
-      username: { value: "" },
-      textarea: { value: "" },
-      selectedOption: { value: "0-13" }
-    };
+  handleSubmit(e) {
+    e.preventDefault();
+    const { textarea } = this.props;
+    axios.post("http://127.0.0.1:3001/", {
+      url_posting: textarea
+    }).then(({ data }) => {
+      console.log(data.result); // eslint-disable-line
+    }).catch(error => {
+      console.error(error); // eslint-disable-line
+    });
   }
 
   render() {
     const { dispatch } = this.props;
+    const { handleSubmit } = this;
     return (
       <div styleName={"custom.container"}>
         <Nav {...this.props} />
@@ -56,7 +65,7 @@ class Demo1 extends Component {
                 value={this.props.textarea}
                 onChange={event => dispatch(inputTextarea(event.target.value))}
               />
-              <input type="submit" value="Send" />
+              <input type="submit" value="Send" onClick={e => handleSubmit(e)} />
             </fieldset>
           </form>
         </div>

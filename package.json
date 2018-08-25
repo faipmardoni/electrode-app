@@ -2,11 +2,11 @@
   "name": "projects",
   "version": "0.0.1",
   "description": "testing build electrode app",
-  "homepage": "electrode-app",
+  "homepage": "https://www.anisubindo.org/",
   "author": {
     "name": "Faip Mardoni",
     "email": "faipmardoni@gmail.com",
-    "url": "your-app-url"
+    "url": "https://www.anisubindo.org/"
   },
   "contributors": [],
   "files": [
@@ -36,6 +36,7 @@
     "heroku-postbuild": "clap build"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bluebird": "^3.4.6",
     "electrode-archetype-react-app": "^5.3.4",
     "electrode-confippet": "^1.0.0",
