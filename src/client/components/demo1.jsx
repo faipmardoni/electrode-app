@@ -56,7 +56,7 @@ class Demo1 extends Component {
                 <option value="0-13">0-13 month</option>
                 <option value="14-17">14-17 month</option>
                 <option value="18-23">18-23 month</option>
-                <option value="24+">24+ month</option>
+                <option value="24+">24 month</option>
               </select>
               <label htmlFor="commentField">Comment</label>
               <textarea
