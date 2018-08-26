@@ -14,12 +14,19 @@ class Demo1 extends Component {
   }
 
   handleSubmit(e) {
+    const { dispatch } = this.props;
     e.preventDefault();
     const { textarea } = this.props;
     axios.post("https://serene-headland-42206.herokuapp.com/", {
       url_posting: textarea
     }).then(({ data }) => {
-      console.log(data.result); // eslint-disable-line
+      let value = ''
+      data.result.forEach(res => {
+        value += res + '\n'
+      });
+      value.slice(0,-1);
+      dispatch(inputTextarea(value))
+      console.log(value);
     }).catch(error => {
       console.error(error); // eslint-disable-line
     });
